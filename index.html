@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>lothoffshowbobandvagene42069inu</title>
-
+<script src="https://kit.fontawesome.com/f5a24ca635.js" crossorigin="anonymous"></script>
     <!-- modal css -->
     <style type="text/css">
       .modal {
@@ -1864,7 +1864,7 @@
                             }
                             .frame {
                               padding:0;
-                              margin: 20px 0
+                              margin: 20px
                             }
                             .slides {
     text-align: center;
@@ -1872,16 +1872,20 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    position:relative;
+    
 }
                             .slide {
                               box-sizing: border-box;
-                              width: 300px;
-                              height: 350px;
+                             max-width: 500px;
+                              max-height: 450px;width:100%;height:300px;
+                              background-color: transparent;
 
                               /* padding-left: 2rem;
                               padding-bottom: 2rem; */
                               font-size: 3rem;
                               color: white;
+                              margin-top:37px
                             }
 
                         
@@ -1889,14 +1893,64 @@
                              
                               border: 0;
                             }
+                            .sl_img{
+                               max-width: 500px!important;
+                              max-height: 450px!important;
+                              width:300px!important;
+                              height:300px!important
+                            }
+.next {
+    border: 0;
+     top: 26px;
+    position: absolute;
+    width: 42px;
+    height: 31px;
+    font-size: 19px;
+    background-color: #131740;
+    color:#fff;
+    border-radius:6px;
+     cursor:pointer;
+   
+}
 
+.prev {
+    border: 0;
+    top: 26px;
+    left: 46%;
+    position: absolute;
+    width: 42px;
+    height: 31px;
+    background-color: #131740;
+    color:#fff;
+    cursor:pointer;
+    border-radius:6px;
+    font-size: 19px;
+    /* right: 0; */
+}
+
+@media screen and (max-width:768px){
+  .prev {
+    border: 0;
+    background-color: #131740;
+    color:#fff;
+    border-radius:6px;
+    top: 26px;
+    left: 35%;
+     cursor:pointer;
+    position: absolute;
+    width: 42px;
+    height: 31px;
+    font-size: 19px;
+    /* right: 0; */
+}
+}
                            
                           </style>
 
-                          <button class="next" style="background-color: transparent;"> <img src="/degen/slider/9.jpg" alt="" style="width:300px;cursor:pointer" /></button>
+                          <button class="imgNext" style="background-color: transparent;cursor: pointer;outline:none;border:none"> <img src="/degen/slider/9.jpg" alt="" style="width:300px;cursor:pointer" /></button>
                            
                           </button>
-                          <div class="slider">
+                          <div class="slider" style="position:relative">
                             <div class="slides">
                               <ul class="frame">
                                 <li
@@ -1905,47 +1959,51 @@
                                 >
                                   <img
                                     src="/degen/5.jpg"
-                                    style="width: 300px; height: 350px"
+                                    class="sl_img"
                                     alt=""
                                   />
                                 </li>
                                 <li class="slide" style="background: #fc4349">
                                   <img
                                     src="/degen/6.jpg"
-                                    style="width: 300px; height: 350px"
+                                     class="sl_img"
                                     alt=""
                                   />
                                 </li>
                                 <li class="slide" style="background: #229933">
                                   <img
                                     src="/degen/8.jpg"
-                                    style="width: 300px; height: 350px"
+                                      class="sl_img"
                                     alt=""
                                   />
                                 </li>
                                 <li class="slide" style="background: #229933">
                                   <img
                                     src="/degen/1.jpg"
-                                    style="width: 300px; height: 350px"
+                                      class="sl_img"
                                     alt=""
                                   />
                                 </li>
                                 <li class="slide" style="background: #229933">
                                   <img
                                     src="/degen/2.jpg"
-                                    style="width: 300px; height: 350px"
+                                    class="sl_img"
                                     alt=""
                                   />
                                 </li>
                                 <li class="slide" style="background: #229933">
                                   <img
                                     src="/degen/3.jpg"
-                                    style="width: 300px; height: 350px"
+                                    class="sl_img"
                                     alt=""
                                   />
                                 </li>
                               </ul>
                             </div>
+
+                            <!-- button group -->
+                             <button class="prev"><i class="fa-solid fa-angle-left"></i></button>
+  <button class="next"><i class="fa-solid fa-angle-right"></i></button>
                           </div>
                         </div>
                       </div>
@@ -5157,11 +5215,20 @@
     <script>
       var previous = document.querySelector(".prev");
       var next = document.querySelector(".next");
+      var imgNext = document.querySelector(".imgNext");
       var slides = document.getElementsByClassName("slide");
       var current = 0;
 
       // Code that moves to the next slide
       next.addEventListener("click", function () {
+        slides[current].classList.remove("active");
+        current++;
+        if (current === slides.length) current = 0;
+        slides[current].classList.add("active");
+      });
+
+// Code that moves to the img next slide
+      imgNext.addEventListener("click", function () {
         slides[current].classList.remove("active");
         current++;
         if (current === slides.length) current = 0;
