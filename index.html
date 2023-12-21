@@ -1854,16 +1854,25 @@
                               margin: 0 auto;
                             }
 
-                            @media (min-width: 50rem) {
-                              .slider {
+                            @media (min-width: 768px) {
+                              /* .slider {
                                 max-width: 50rem;
                                 margin: 0 auto;
-                              }
+                              } */
                             }
                             .slides {
                             }
                             .frame {
+                              padding:0;
+                              margin: 20px 0
                             }
+                            .slides {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
                             .slide {
                               box-sizing: border-box;
                               width: 300px;
